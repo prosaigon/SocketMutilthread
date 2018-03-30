@@ -35,6 +35,7 @@ class ThreadedServer(object):
                 return False
 
 if __name__ == "__main__":
+    host = input("host: ")
     while True:
         port_num = input("Port? ")
         try:
@@ -44,4 +45,4 @@ if __name__ == "__main__":
             print(e)
             pass
 
-    ThreadedServer('10.228.29.133',port_num).listen()
+    ThreadedServer(host,port_num).listen()
