@@ -3,7 +3,7 @@ import socket
 import threading
 
 class ClientThread():
-    def __init__(self,host,port):
+    def __init__(self,host,port: int):
         self.server_address = (host,port)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.dataRecive = None
@@ -36,10 +36,3 @@ class ClientThread():
             print('Send error :',e)
             self.connect()
 
-if __name__ == '__main__':
-    client = ClientThread(host='10.228.29.133',port=6666)
-    client.Start()
-    while True:
-        data = input('=>')
-        client.SendData(data.encode('utf-8'))
-        print(client.dataRecive)
